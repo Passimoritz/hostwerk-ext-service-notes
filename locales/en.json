@@ -1,0 +1,17 @@
+{
+  "noteFor": "Note about this service",
+  "placeholder": "Logins, special cases, to-dos … Checklist: - [ ] item",
+  "save": "Save",
+  "saved": "Note saved",
+  "updated": "Last changed {time}",
+  "notYet": "No note yet.",
+  "view": "View",
+  "emptyNote": "The note shows up here – checklist items can be ticked off.",
+  "search": "Search notes …",
+  "open": "Open",
+  "missing": "Service no longer exists",
+  "noHits": "No note matches the search.",
+  "none": "No notes yet.",
+  "howTo": "Open the “Notes” tab on a service page or choose “Note …” in the right-click menu.",
+  "kind.web": "Web server", "kind.db": "Database", "kind.minecraft": "Minecraft", "kind.app": "App", "kind.game": "Game server", "kind.mail": "E-mail"
+}

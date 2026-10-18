@@ -1,0 +1,17 @@
+{
+  "noteFor": "Notiz zu diesem Dienst",
+  "placeholder": "Zugänge, Besonderheiten, To-dos … Checkliste: - [ ] Punkt",
+  "save": "Speichern",
+  "saved": "Notiz gespeichert",
+  "updated": "Zuletzt geändert {time}",
+  "notYet": "Noch keine Notiz.",
+  "view": "Ansicht",
+  "emptyNote": "Hier erscheint die Notiz – Checklisten-Punkte lassen sich abhaken.",
+  "search": "Notizen durchsuchen …",
+  "open": "Öffnen",
+  "missing": "Dienst nicht mehr da",
+  "noHits": "Keine Notiz passt zur Suche.",
+  "none": "Noch keine Notizen.",
+  "howTo": "Auf einer Dienst-Seite den Reiter „Notizen“ öffnen oder im Rechtsklick-Menü „Notiz …“ wählen.",
+  "kind.web": "Webserver", "kind.db": "Datenbank", "kind.minecraft": "Minecraft", "kind.app": "App", "kind.game": "Spiele-Server", "kind.mail": "E-Mail"
+}
