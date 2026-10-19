@@ -1,3 +1,5 @@
+![Dienst-Notizen](banner.svg)
+
 # Dienst-Notizen
 
 Notizen und Checklisten zu jedem Dienst – als eigener Reiter auf jeder Detailseite und im Rechtsklick-Menü.

@@ -1,3 +1,5 @@
+![Service notes](banner.svg)
+
 # Service notes
 
 Notes and checklists for every service – as its own tab on every detail page and in the right-click menu.
