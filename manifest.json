@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/Passimoritz/hostwerk-public/main/sdk/manifest.schema.json",
   "id": "service-notes",
   "color": "#f59e0b",
-  "category": "other",
+  "category": "productivity",
   "name": {
     "de": "Dienst-Notizen",
     "en": "Service notes"
@@ -109,7 +109,7 @@
       }
     ]
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Hostwerk",
   "homepage": "https://github.com/Passimoritz/hostwerk-ext-service-notes",
   "license": "MIT",
