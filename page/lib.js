@@ -107,5 +107,18 @@
       .sort((a, b) => (b.updatedAt || 0) - (a.updatedAt || 0));
   }
 
-  return { KINDS, keyOf, setNote, removeNote, toggleCheck, progress, servicesFromOverview, noteTarget, usage, inline, heading, list, MAX, STORAGE_LIMIT };
+  /**
+   * Notizen für Hostwerks Wissensgraph (PUT /knowledge/notes, SDK 3.1): je Notiz ein Knoten mit Dienst-Bezug – Hostwerk
+   * hängt sie an die Projekte, zu denen der Dienst gehört. titleOf(kind, name) baut den Titel (z. B. Webserver „Apache“).
+   */
+  function graphNotes(map, services, titleOf = (kind, name) => `${kind} „${name}“`) {
+    const byKey = new Map((services || []).map((s) => [keyOf(s.kind, s.id), s]));
+    return Object.entries(map || {}).filter(([, v]) => v && String(v.text || '').trim()).map(([k, v]) => {
+      const [kind, ...rest] = k.split(':'); const id = rest.join(':'); const s = byKey.get(k);
+      const name = s ? s.name : id;
+      return { id: k, title: titleOf(kind, name), text: String(v.text), service: { kind, id, name } };
+    });
+  }
+
+  return { KINDS, keyOf, graphNotes, setNote, removeNote, toggleCheck, progress, servicesFromOverview, noteTarget, usage, inline, heading, list, MAX, STORAGE_LIMIT };
 }));

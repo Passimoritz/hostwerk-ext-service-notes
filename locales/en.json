@@ -35,5 +35,6 @@
   "newNote": "New note",
   "pickTitle": "Which service?",
   "cancel": "Cancel",
-  "noServices": "No services yet."
+  "noServices": "No services yet.",
+  "graphTitle": "{kind} “{name}”"
 }

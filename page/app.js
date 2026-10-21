@@ -32,6 +32,16 @@ async function store(next) {
   if (N.usage(next).bytes > N.STORAGE_LIMIT) throw new Error(t('full'));
   await Hostwerk.storage.set('notes', next);
   notes = next;
+  syncGraph();
+}
+/**
+ * Notizen als Knoten in Hostwerks Wissensgraph (ab Hostwerk 3.0, Recht change:knowledge ohne Rückfrage) – gebündelt,
+ * weil der Reiter beim Tippen laufend speichert. Ältere Hostwerk-Versionen kennen die Adresse nicht: dann still nichts.
+ */
+let graphTimer = null;
+function syncGraph() {
+  clearTimeout(graphTimer);
+  graphTimer = setTimeout(() => { Hostwerk.put('/knowledge/notes', { notes: N.graphNotes(notes, services, (kind, name) => t('graphTitle', { kind: t('kind.' + kind), name })) }).catch(() => {}); }, 1500);
 }
 const failMsg = (e) => (e && e.message === t('full') ? t('full') : t('saveFailed'));
 
@@ -154,7 +164,7 @@ function render() {
 }
 
 async function start() {
-  try { await loadAll(); } catch {
+  try { await loadAll(); if (!N.noteTarget(Hostwerk.context)) syncGraph(); } catch {
     Hostwerk.render('#app', html`<div class="empty"><h3>${t('loadFailed')}</h3><div class="empty-action"><button type="button" class="btn" id="retry">${t('retry')}</button></div></div>`);
     $('retry').addEventListener('click', start);
     return;

@@ -12,6 +12,7 @@ Eine offizielle [Hostwerk](https://github.com/Passimoritz/hostwerk-public)-Erwei
 - Übersichtsseite mit Suche und Löschen (auch Notizen zu Diensten, die es nicht mehr gibt); Checklisten-Zeilen `- [ ] …` lassen sich abhaken.
 - Einfache, sichere Formatierung: `**fett**`, Backticks für Code, `# Überschrift` und Weblinks (öffnen nach Rückfrage im Browser) – nichts in einer Notiz wird je zu HTML.
 - Gespeichert bei Hostwerk (`Hostwerk.storage`, max. 256 KB) – die Seite zeigt, wie viel belegt ist, und sagt deutlich, wenn er voll ist. Alle, die dieses Hostwerk nutzen (auch dein Team), sehen dieselben Notizen.
+- **Im Wissensgraph** (ab Hostwerk 3.0): jede Notiz wird ein Knoten, verknüpft mit den Projekten ihres Webservers bzw. ihrer App – Claude und die Wissensgraph-Seite finden sie zusammen mit dem Code.
 - Andere Erweiterungen dürfen Reiter ergänzen (`"allowExtensions": { "*": ["tabs"] }`) – die [Zusatz-Vorlage](https://github.com/Passimoritz/hostwerk-ext-template-extend) setzt hier einen Reiter „Merkliste“ dazu.
 
 ## Rechte
@@ -20,6 +21,7 @@ Eine offizielle [Hostwerk](https://github.com/Passimoritz/hostwerk-public)-Erwei
 |---|---|
 | `read:services` | Dienstnamen neben den Notizen anzeigen (auch Spiele-Server und Mail-Fänger) |
 | `storage` | Notizen aufbewahren |
+| `change:knowledge` | Notizen als Knoten in Hostwerks Wissensgraph eintragen (ab Hostwerk 3.0, ohne Rückfrage – nur die eigenen Daten des Graphen) |
 
 ## Entwickeln
 

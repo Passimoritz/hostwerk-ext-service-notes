@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0
+
+- Notes as nodes in Hostwerk's knowledge graph (Hostwerk 3.0, SDK 3.1 `PUT /knowledge/notes`): each note is linked to the projects its web server or app belongs to and shows up in the source “Notes from Hostwerk”; classes a note names get an edge. Older Hostwerk: nothing changes. New permission `change:knowledge` (no prompt, only the graph's own data). / Notizen als Knoten im Wissensgraph – verknüpft mit den Projekten ihres Webservers bzw. ihrer App; neues Recht `change:knowledge` (ohne Rückfrage).
+
 ## 1.2.0
 
 - Game servers and the mail catcher are full services now: names, "Open" button, no more "Service no longer exists"; a notes tab in the mail area. / Spiele-Server und Mail-Fänger vollständig unterstützt.

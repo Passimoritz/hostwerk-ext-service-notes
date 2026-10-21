@@ -13,7 +13,8 @@
   },
   "permissions": [
     "read:services",
-    "storage"
+    "storage",
+    "change:knowledge"
   ],
   "page": {
     "title": {
@@ -144,7 +145,7 @@
       }
     ]
   },
-  "version": "1.2.0",
+  "version": "1.3.0",
   "author": "Hostwerk",
   "homepage": "https://github.com/Passimoritz/hostwerk-ext-service-notes",
   "license": "MIT",

@@ -65,3 +65,13 @@ test('Formatierung: fett, Code, Links – nur http(s), Satzzeichen nicht im Link
   assert.deepStrictEqual(N.heading('## Zugänge'), { level: 2, text: 'Zugänge' });
   assert.strictEqual(N.heading('#kein'), null);
 });
+
+test('notes for the knowledge graph: one node per note with its service, empty ones left out, names from the service list', () => {
+  const map = { 'web:apache': { text: '- [ ] renew certificate', updatedAt: 1 }, 'db:old': { text: 'gone service', updatedAt: 2 }, 'mc:x': { text: '   ', updatedAt: 3 } };
+  const g = N.graphNotes(map, [{ kind: 'web', id: 'apache', name: 'Apache' }], (k, n) => `${({ web: 'Web server', db: 'Database' })[k]} “${n}”`);
+  assert.deepStrictEqual(g, [
+    { id: 'web:apache', title: 'Web server “Apache”', text: '- [ ] renew certificate', service: { kind: 'web', id: 'apache', name: 'Apache' } },
+    { id: 'db:old', title: 'Database “old”', text: 'gone service', service: { kind: 'db', id: 'old', name: 'old' } },
+  ]);
+  assert.deepStrictEqual(N.graphNotes(null, null), []);
+});

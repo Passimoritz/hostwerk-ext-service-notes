@@ -35,5 +35,6 @@
   "newNote": "Neue Notiz",
   "pickTitle": "Zu welchem Dienst?",
   "cancel": "Abbrechen",
-  "noServices": "Noch keine Dienste."
+  "noServices": "Noch keine Dienste.",
+  "graphTitle": "{kind} „{name}“"
 }
