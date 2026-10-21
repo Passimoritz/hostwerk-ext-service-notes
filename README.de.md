@@ -17,6 +17,8 @@ Eine offizielle [Hostwerk](https://github.com/Passimoritz/hostwerk-public)-Erwei
 
 ## Rechte
 
+**Wo:** Reiter „Notizen“ jedes Dienstes – seit 1.3.1 ohne eigenen Seitenleisten-Eintrag; die ganze Seite bleibt unter Erweiterungen → Öffnen
+
 | Recht | Wofür |
 |---|---|
 | `read:services` | Dienstnamen neben den Notizen anzeigen (auch Spiele-Server und Mail-Fänger) |

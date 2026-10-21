@@ -17,6 +17,8 @@ An official [Hostwerk](https://github.com/Passimoritz/hostwerk-public) extension
 
 ## Permissions
 
+**Where:** the “Notes” tab of every service – no own sidebar entry since 1.3.1; the full page stays under Extensions → Open
+
 | Permission | Why |
 |---|---|
 | `read:services` | Show service names next to the notes (also game servers and the mail catcher) |

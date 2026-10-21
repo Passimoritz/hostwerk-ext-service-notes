@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+
+- Lives where it belongs: the “Notes” tab of every service – no own sidebar entry any more (Hostwerk 3.0+); the full page stays under Extensions → Open and can be pinned in the sidebar settings. / Steckt jetzt dort, wo sie hingehört: Reiter „Notizen“ jedes Dienstes – kein eigener Seitenleisten-Eintrag mehr (Hostwerk 3.0+); die ganze Seite bleibt unter Erweiterungen → Öffnen und lässt sich in den Seitenleisten-Einstellungen anheften.
+
 ## 1.3.0
 
 - Notes as nodes in Hostwerk's knowledge graph (Hostwerk 3.0, SDK 3.1 `PUT /knowledge/notes`): each note is linked to the projects its web server or app belongs to and shows up in the source “Notes from Hostwerk”; classes a note names get an edge. Older Hostwerk: nothing changes. New permission `change:knowledge` (no prompt, only the graph's own data). / Notizen als Knoten im Wissensgraph – verknüpft mit den Projekten ihres Webservers bzw. ihrer App; neues Recht `change:knowledge` (ohne Rückfrage).
