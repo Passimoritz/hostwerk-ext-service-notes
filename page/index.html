@@ -1,17 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/ext-sdk.js"></script>
   <style>
+    /* Größen aus Hostwerks Design-Skala (mit Rückfall für ältere Hostwerk-Versionen) */
     .note-line { white-space: pre-wrap; min-height: 1.4em; }
-    .note-check { display: flex; gap: 6px; align-items: flex-start; cursor: pointer; }
-    .note-check input { margin-top: 3px; }
+    .note-heading-1 { font-size: var(--fs-lg, 16px); font-weight: 700; margin-top: var(--sp-2, 8px); }
+    .note-heading-2 { font-size: var(--fs-md, 14px); font-weight: 700; margin-top: var(--sp-1, 4px); }
+    .note-check { display: flex; gap: var(--sp-2, 8px); align-items: flex-start; cursor: pointer; min-height: 24px; }
+    .note-check input { margin-top: var(--sp-1, 4px); }
+    .note-line a, .note-check a { color: var(--accent-text, var(--accent)); }
   </style>
 </head>
 <body>
-  <div id="app"><div class="hw-skeleton" style="height:140px"></div></div>
+  <div id="app" aria-live="polite"><div class="hw-skeleton" style="height: calc(var(--sp-8, 32px) * 4)"></div></div>
   <script src="lib.js"></script>
   <script src="app.js"></script>
 </body>

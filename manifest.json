@@ -8,8 +8,8 @@
     "en": "Service notes"
   },
   "description": {
-    "de": "Notizen und Checklisten zu jedem Dienst – als eigener Reiter auf jeder Detailseite (Webserver, Datenbank, Minecraft, App, Spiele-Server) und im Rechtsklick-Menü.",
-    "en": "Notes and checklists for every service – as its own tab on every detail page (web server, database, Minecraft, app, game server) and in the right-click menu."
+    "de": "Notizen und Checklisten zu jedem Dienst – als eigener Reiter auf jeder Detailseite (Webserver, Datenbank, Minecraft, App, Spiele-Server, Mail-Fänger) und im Rechtsklick-Menü.",
+    "en": "Notes and checklists for every service – as its own tab on every detail page (web server, database, Minecraft, app, game server, mail catcher) and in the right-click menu."
   },
   "permissions": [
     "read:services",
@@ -25,7 +25,10 @@
       "en": "All notes about your services – with search and checklists you can tick off."
     },
     "icon": "file",
-    "file": "page/index.html"
+    "file": "page/index.html",
+    "nav": {
+      "group": "server"
+    }
   },
   "contributes": {
     "tabs": [
@@ -78,6 +81,16 @@
         "icon": "file",
         "on": "game",
         "file": "page/tab.html"
+      },
+      {
+        "id": "notes-mail",
+        "title": {
+          "de": "Notizen",
+          "en": "Notes"
+        },
+        "icon": "file",
+        "on": "area:mail",
+        "file": "page/tab.html"
       }
     ],
     "actions": [
@@ -93,7 +106,8 @@
           "db",
           "minecraft",
           "app",
-          "game"
+          "game",
+          "palette"
         ]
       },
       {
@@ -107,13 +121,39 @@
           "palette"
         ]
       }
+    ],
+    "new": [
+      {
+        "id": "note",
+        "title": {
+          "de": "Dienst-Notiz",
+          "en": "Service note"
+        },
+        "icon": "file"
+      }
+    ],
+    "shortcuts": [
+      {
+        "id": "all",
+        "title": {
+          "de": "Alle Dienst-Notizen",
+          "en": "All service notes"
+        },
+        "keys": "ctrl+alt+n",
+        "action": "all"
+      }
     ]
   },
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": "Hostwerk",
   "homepage": "https://github.com/Passimoritz/hostwerk-ext-service-notes",
   "license": "MIT",
   "icon": "icon.svg",
   "banner": "banner.svg",
-  "hostwerk": ">=2.9.0"
+  "hostwerk": ">=2.9.0",
+  "allowExtensions": {
+    "*": [
+      "tabs"
+    ]
+  }
 }
