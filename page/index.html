@@ -6,12 +6,19 @@
   <script src="/ext-sdk.js"></script>
   <style>
     /* Größen aus Hostwerks Design-Skala (mit Rückfall für ältere Hostwerk-Versionen) */
-    .note-line { white-space: pre-wrap; min-height: 1.4em; }
+    .note-line { white-space: pre-wrap; min-height: 1.4em; overflow-wrap: anywhere; }
     .note-heading-1 { font-size: var(--fs-lg, 16px); font-weight: 700; margin-top: var(--sp-2, 8px); }
     .note-heading-2 { font-size: var(--fs-md, 14px); font-weight: 700; margin-top: var(--sp-1, 4px); }
     .note-check { display: flex; gap: var(--sp-2, 8px); align-items: flex-start; cursor: pointer; min-height: 24px; }
     .note-check input { margin-top: var(--sp-1, 4px); }
+    /* lange Wörter und Links umbrechen statt die Karte zu sprengen */
+    .note-check > span { min-width: 0; overflow-wrap: anywhere; }
     .note-line a, .note-check a { color: var(--accent-text, var(--accent)); }
+    /* Dienstauswahl: lange Namen kürzen (ganzer Name im Tooltip) */
+    .pick { max-width: 100%; }
+    .pick > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    /* Kartenkopf der Liste: lange Dienstnamen ohne Leerzeichen umbrechen statt über die Karte hinaus */
+    .note-name { min-width: 0; overflow-wrap: anywhere; }
   </style>
 </head>
 <body>

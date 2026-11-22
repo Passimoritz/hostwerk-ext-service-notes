@@ -33,8 +33,16 @@
   "deleteFor": "Delete note on {name}",
   "deleted": "Note deleted",
   "newNote": "New note",
+  "allNotes": "All notes",
   "pickTitle": "Which service?",
   "cancel": "Cancel",
   "noServices": "No services yet.",
-  "graphTitle": "{kind} “{name}”"
+  "graphTitle": "{kind} “{name}”",
+  "filterAll": "All",
+  "filterOpen": "Open items",
+  "filterMissing": "Service no longer there",
+  "exportMd": "Export (Markdown)",
+  "exportJson": "Export (JSON)",
+  "exportTitle": "Service notes",
+  "exportFailed": "Couldn’t save the file."
 }

@@ -120,5 +120,21 @@
     });
   }
 
-  return { KINDS, keyOf, graphNotes, setNote, removeNote, toggleCheck, progress, servicesFromOverview, noteTarget, usage, inline, heading, list, MAX, STORAGE_LIMIT };
+  /** Filter of the list: 'all' · 'open' (unticked checklist items) · 'missing' (service no longer there). */
+  function filterList(items, f) { return f === 'open' ? items.filter((x) => x.open > 0) : f === 'missing' ? items.filter((x) => x.missing) : items; }
+
+  /**
+   * Export before removing (removing the extension deletes the notes): Markdown to read, JSON to keep everything.
+   * items = list(); kindName(kind) → readable kind ("Web server").
+   */
+  function exportMarkdown(items, { title = 'Service notes', kindName = (k) => k, at = Date.now() } = {}) {
+    const out = [`# ${title}`, '', `_${new Date(at).toISOString().slice(0, 16).replace('T', ' ')}_`, ''];
+    for (const x of items) out.push(`## ${kindName(x.kind)} · ${x.name}`, '', String(x.text).trim(), '');
+    return out.join('\n');
+  }
+  function exportJson(map, services, at = Date.now()) {
+    return JSON.stringify({ app: 'hostwerk-service-notes', exportedAt: new Date(at).toISOString(), notes: list(map, services).map(({ key, kind, id, name, missing, text, updatedAt }) => ({ key, kind, id, name, missing, text, updatedAt })) }, null, 2);
+  }
+
+  return { KINDS, keyOf, graphNotes, filterList, exportMarkdown, exportJson, setNote, removeNote, toggleCheck, progress, servicesFromOverview, noteTarget, usage, inline, heading, list, MAX, STORAGE_LIMIT };
 }));

@@ -150,6 +150,7 @@
   "icon": "icon.svg",
   "banner": "banner.svg",
   "hostwerk": ">=2.9.0",
+  "sdkVersion": "3.16",
   "allowExtensions": {
     "*": [
       "tabs"

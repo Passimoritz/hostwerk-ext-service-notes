@@ -75,3 +75,19 @@ test('notes for the knowledge graph: one node per note with its service, empty o
   ]);
   assert.deepStrictEqual(N.graphNotes(null, null), []);
 });
+
+test('Filter (offene Punkte, Dienst weg) und Export als Markdown/JSON', () => {
+  const map = { 'web:shop': { text: '- [ ] SSL\n- [x] Backup', updatedAt: 2 }, 'db:weg': { text: 'Passwort im Tresor', updatedAt: 1 } };
+  const items = N.list(map, [{ kind: 'web', id: 'shop', name: 'Shop' }]);
+  assert.deepStrictEqual(N.filterList(items, 'open').map((x) => x.key), ['web:shop']);
+  assert.deepStrictEqual(N.filterList(items, 'missing').map((x) => x.key), ['db:weg']);
+  assert.strictEqual(N.filterList(items, 'all').length, 2);
+  const md = N.exportMarkdown(items, { title: 'Notizen', kindName: (k) => ({ web: 'Webserver', db: 'Datenbank' }[k]), at: 0 });
+  assert.match(md, /^# Notizen\n/);
+  assert.match(md, /## Webserver · Shop\n\n- \[ \] SSL\n- \[x\] Backup/);
+  assert.match(md, /## Datenbank · weg/);
+  const j = JSON.parse(N.exportJson(map, [], 0));
+  assert.strictEqual(j.notes.length, 2);
+  assert.strictEqual(j.exportedAt, '1970-01-01T00:00:00.000Z');
+  assert.ok(j.notes.every((x) => x.text && x.key));
+});

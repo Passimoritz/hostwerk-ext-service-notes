@@ -33,8 +33,16 @@
   "deleteFor": "Notiz zu {name} löschen",
   "deleted": "Notiz gelöscht",
   "newNote": "Neue Notiz",
+  "allNotes": "Alle Notizen",
   "pickTitle": "Zu welchem Dienst?",
   "cancel": "Abbrechen",
   "noServices": "Noch keine Dienste.",
-  "graphTitle": "{kind} „{name}“"
+  "graphTitle": "{kind} „{name}“",
+  "filterAll": "Alle",
+  "filterOpen": "Offene Punkte",
+  "filterMissing": "Dienst nicht mehr da",
+  "exportMd": "Exportieren (Markdown)",
+  "exportJson": "Exportieren (JSON)",
+  "exportTitle": "Dienst-Notizen",
+  "exportFailed": "Die Datei ließ sich nicht speichern."
 }
