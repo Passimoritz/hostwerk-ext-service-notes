@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0
+
+- Export all notes as Markdown or JSON (a backup before removing the extension) and filter the list by “Open items” or “Service no longer there”. / Alle Notizen als Markdown oder JSON exportieren (Sicherung vor dem Entfernen der Erweiterung) und die Liste nach „Offene Punkte“ oder „Dienst nicht mehr da“ filtern.
+- No more lost typing when clicking away right after writing; ticking a checkbox saves typed text first; the open note stays open after a language switch. / Kein Verlust von Getipptem mehr beim Wegklicken direkt nach dem Schreiben; Abhaken sichert vorher Getipptes; die offene Notiz bleibt nach einem Sprachwechsel offen.
+- On the full page a “← All notes” button and the service name; long service names and words wrap instead of breaking the cards. / Auf der ganzen Seite ein Knopf „← Alle Notizen“ und der Dienstname; lange Dienstnamen und Wörter brechen um statt die Karten zu sprengen.
+
 ## 1.3.2
 
 - New animated icon and banner in the common Hostwerk style (isometric block). / Neues animiertes Symbol und Banner im gemeinsamen Hostwerk-Stil (isometrischer Block).
